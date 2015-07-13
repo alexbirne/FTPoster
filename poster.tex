@@ -1,0 +1,236 @@
+% \documentclass[landscape,final]{baposter}
+\documentclass[a0poster,portrait,final,movebody=-5pt]{baposter}
+% \documentclass[a4shrink,portrait,final]{baposter}
+% Use a4shrink for an a4 sized paper.
+
+%\tracingstats=2
+
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsfonts} 
+\usepackage{cmbright}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{lpic}
+\usepackage{fontspec}
+\setsansfont [ BoldFont={Akkurat Office},  ItalicFont={Akkurat Light Office Italic}, BoldItalicFont={Akkurat Office Italic} ] {Akkurat Light Office}
+\setmainfont [ BoldFont={Akkurat Office},  ItalicFont={Akkurat Light Office Italic}, BoldItalicFont={Akkurat Office Italic} ] {Akkurat Light Office}
+
+\newboolean{articletitles}
+\setboolean{articletitles}{true}
+\newboolean{uprightparticles}
+\usepackage{xspace}
+\usepackage{fancyvrb}
+\usepackage{rccol}
+\rcRoundingfalse
+\usepackage{tabularx}
+\usepackage{units}
+\usepackage{upgreek}
+\usepackage{paralist}
+%\setdefaultleftmargin{0pt}{}{}{}{}{}
+\input{sin2b-definitions.tex}
+\input{lhcb-symbols-def.tex}
+\usepackage{setspace}
+%\usepackage{biblatex}
+%% Biblatex Customisation
+%\usepackage{mciteplus}
+%\defbibheading{poster}{\vskip 0.1em} % Replace default heading
+%\renewcommand{\bibfont}{\footnotesize\sffamily}
+%\addbibresource{bibliography}
+
+\newcommand{\versal}[1]{\textsf{\textsmaller{\MakeUppercase{\caps{#1}}}}}
+\newcommand*{\ac}[1]{\versal{#1}}
+
+\usepackage{multicol}
+
+\usepackage{tweaklist}
+
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\newcommand{\captionfont}{\footnotesize}
+
+\selectcolormodel{RGB}
+
+\graphicspath{{figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Some math symbols used in the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 
+%\newcommand{\Matrix}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+%\newcommand{\Vector}[1]{\Matrix{#1}}
+%\newcommand*{\SET}[1]  {\ensuremath{\mathcal{#1}}}
+%\newcommand*{\MAT}[1]  {\ensuremath{\mathbf{#1}}}
+%\newcommand*{\VEC}[1]  {\ensuremath{\bm{#1}}}
+%\newcommand*{\CONST}[1]{\ensuremath{\mathit{#1}}}
+%\newcommand*{\norm}[1]{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+%\newcommand*{\abs}[1]{\mathopen| #1 \mathclose|}% use instead of $\|x\|$
+%\newcommand*{\absLR}[1]{\left| #1 \right|}% use instead of $\|x\|$
+
+%\def\norm#1{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+%\newcommand{\normLR}[1]{\left\| #1 \right\|}% use instead of $\|x\|$
+
+%\newcommand{\bn}{{\boldsymbol{n}}}
+%\newcommand{\klamm}[1]{\begin{small}(#1)\end{small}}
+
+% alternative to \atop, \atop produces warnings, when combined with amsmath package
+\newcommand{\Atop}[2]{\genfrac{}{}{0pt}{3}{#1}{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}
+%\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{2pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{100pt}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\fontsize{8.5pt}{8.5pt}\selectfont
+\abovedisplayskip=5pt
+\belowdisplayskip=5pt
+\abovedisplayshortskip=0pt
+\belowdisplayshortskip=0pt
+\setlength{\fboxrule}{2pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+%\definecolor{silver}{cmyk}{0,0,0,0.3}
+%\definecolor{yellow}{cmyk}{0,0,0.9,0.0}
+%\definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+%\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+%\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+%\definecolor{tu_gruen}{cmyk}{57,0,100,0}
+\definecolor{tu_gruen}{RGB}{116,184,68}
+%\definecolor{tu_gruen}{RGB}{132,184,24}
+%\definecolor{tu_gruen}{RGB}{100,200,45}
+\definecolor{lightyellow}{cmyk}{0,0.05,0.6,0.0}
+%\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.2,0.0}
+\definecolor{lightestyellow}{cmyk}{0,0,0.05,0.0}
+\renewcommand{\labelitemi}{${\color{tu_gruen}\bullet}$}
+\setlength{\leftmargini}{12pt}
+
+\definecolor{whity}{rgb}{1,1,1}
+
+\newlength{\leftimgwidth}
+\begin{poster}%
+  % Poster Options
+  {
+  % Show grid to help with alignment
+  grid=no,
+  % Column spacing
+  %colspacing=1em,
+  % Color style
+  bgColorOne=whity,%lighteryellow,
+  %bgColorTwo=whity,%lightestyellow,
+  borderColor=tu_gruen,
+  headerColorOne=tu_gruen,
+  %headerColorTwo=reddishyellow,
+  headerFontColor=whity,
+  boxColorOne=whity,
+  %boxColorTwo=lighteryellow,
+  % Format of textbox
+  textborder=roundedleft,
+  % Format of text header
+  eyecatcher=yes,
+  headerborder=open,
+  headerheight=0.11\textheight,
+  headershape=roundedright,
+  headershade=plain,
+  boxshade=plain,
+  %background=shade-tb,
+  background=plain,
+  linewidth=3pt
+  }% es muss EXAKT eine Zeile Abstand zur caption sein, sonst Fehlermeldung!!!!!!!!!!!!!!!!
+{\begin{minipage}[c]{0.20\textwidth}
+\vspace{-1.6cm}
+\includegraphics[width=0.3\textwidth]{figures/CERNLogoOutline.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.20\textwidth}
+\vspace{-1.6cm}\hspace{-1.8cm}
+\includegraphics[height=0.3\textwidth]{figures/lhcb-logo.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.20\textwidth}
+\vspace{-1.6cm}\hspace{-2.5cm}
+\includegraphics[height=0.3\textwidth]{figures/BMBF.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.20\textwidth}
+\vspace{-1.6cm}\hspace{-2.5cm}
+\includegraphics[height=0.3\textwidth]{figures/tud_logo_cmyk.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.20\textwidth}
+\vspace{-1.6cm}\hspace{3.3cm}
+\includegraphics[height=0.3\textwidth]{figures/e5logo_green.pdf}
+\end{minipage}
+\newline
+\begin{minipage}{0.8\textwidth}\vspace{2.5cm}\hspace{-21.8cm}
+\includegraphics[height=0.075\textwidth]{figures/title.pdf}
+\end{minipage}
+}
+%-----------------------------------------------------------------------------------------------
+%-------------------------				Caption				--------------------------------
+%-----------------------------------------------------------------------------------------------
+{}
+
+{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position 
+%%% towards an already declared box. So if you have a box attached to the 
+%%% bottom, one to the top and a third one which should be in between, you 
+%%% have to specify the top and bottom boxes before you specify the middle 
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \headerbox{Motivation}{name=motivation,column=1,span=2,row=0}{
+% \phantom{\headerbox{test}{name=test,column=0,row=0}{}}
+%-----------------------------------------------------------------------------------------------
+%-------------------------				Einleitung	   --------------------------------
+%-----------------------------------------------------------------------------------------------
+
+
+%\input{box_intro.tex}
+\input{box_basics.tex}
+\input{box_calib.tex}
+\input{box_run1.tex}
+\input{box_devs.tex}
+\input{box_out.tex}
+\input{box_refs.tex}
+
+
+
+
+
+
+
+
+\end{poster}%
+\end{document}

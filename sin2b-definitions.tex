@@ -1,0 +1,78 @@
+%% JpsiKS specific
+\def\BdToJPsiKS  {\decay{\Bd}{\jpsi\KS}}
+\def\BdToJPsiKstar  {\decay{\Bd}{\jpsi\Kstar}}
+\def\BuToJPsiK  {\decay{\Bu}{\jpsi\Kp}}
+\def\SJpsiKS     {\ensuremath{S_{\jpsi\KS}}\xspace}
+\def\CJpsiKS     {\ensuremath{C_{\jpsi\KS}}\xspace}
+\def\Sf     {\ensuremath{S_{f}}\xspace}
+\def\Cf     {\ensuremath{C_{f}}\xspace}
+\def\sintwobeta   {\ensuremath{\sin 2\beta}\xspace}
+\def\etaOS {\eta^{\text{OS}}}
+\def\Deltaomega {\Delta p_0}
+\def\JPsiTomumu	{\decay{\jpsi}{\mumu}}
+\def\KSTopipi	{\decay{\KS}{\pipi}}
+\def\BdToDstmunu	{\decay{\Bd}{\Dstarm\mup\neum}}
+\def\DsTophiKKpi	{\decay{\Ds}{\phi(\KpKm)\pim}}
+\def\DsToKstKpiK	{\decay{\Ds}{\Kstarz(\Kp\pim)\Km}}
+\def\DsToKKpi		{\decay{\Ds}{\KpKm\pim}}
+\def\DsToKpipi		{\decay{\Ds}{\Km\pipi}}
+\def\DsTopipipi		{\decay{\Ds}{\pim\pipi}}
+
+\newcommand{\Bztag}{\ensuremath{\widehat{\B^0}}\xspace}
+\newcommand{\Bzbtag}{\ensuremath{\widehat{\Bbar^0}}\xspace}
+
+\newcommand{\pref}[1]{\ref{#1} on page~\pageref{#1}\xspace}
+
+% Convenience functions
+\newcommand{\asymbol}[3]{
+\ensuremath{#1
+^{\ForEach{;}{
+\ifboolexpr{test {\ifnumcomp{\the\thislevelcount}{=}{1}}}
+  {\text{\thislevelitem}}
+  {, \text{\thislevelitem}}
+}{#2}}
+_{\ForEach{;}{
+\ifboolexpr{test {\ifnumcomp{\the\thislevelcount}{=}{1}}}
+  {\text{\thislevelitem}}
+  {, \text{\thislevelitem}}
+}{#3}}
+\xspace}
+}
+
+\newcommand{\pdf}[2]{\asymbol{\mathcal{P}}{#1}{#2}}
+\newcommand{\res}[2]{\asymbol{\mathcal{R}}{#1}{#2}}
+\newcommand{\norm}[2]{\asymbol{\mathcal{N}}{#1}{#2}}
+\newcommand{\effc}[2]{\asymbol{\epsilon}{#1}{#2}}
+\newcommand{\yield}[2]{\asymbol{N}{#1}{#2}}
+\newcommand{\parvec}[2]{\asymbol{\lambda}{#1}{#2}}
+\newcommand{\param}[3]{\asymbol{#1}{#2}{#3}}
+
+\newcommand{\SPlot}{\ensuremath{_{s}\mathcal{P}lot}\xspace}
+\newcommand{\SPlots}{\ensuremath{_{s}\mathcal{P}lots}\xspace}
+\newcommand{\SPlotweight}{\ensuremath{_{s}\mathcal{P}_\text{n}}\xspace}
+
+\SaveVerb{Hlt1u}=Hlt1u=
+\SaveVerb{Hlt2u}=Hlt2u=
+\SaveVerb{Hlt2b}=Hlt2b=
+
+
+% Definitions to have correct line numbering even when using AMS math's align
+% taken from http://phaseportrait.blogspot.de/2007/08/lineno-and-amsmath-compatibility.html
+
+%\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+%  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+%  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+%  \renewenvironment{#1}%
+%     {\linenomath\csname old#1\endcsname}%
+%     {\csname oldend#1\endcsname\endlinenomath}}% 
+%\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+%  \patchAmsMathEnvironmentForLineno{#1}%
+%  \patchAmsMathEnvironmentForLineno{#1*}}%
+%\AtBeginDocument{%
+%\patchBothAmsMathEnvironmentsForLineno{equation}%
+%\patchBothAmsMathEnvironmentsForLineno{align}%
+%\patchBothAmsMathEnvironmentsForLineno{flalign}%
+%\patchBothAmsMathEnvironmentsForLineno{alignat}%
+%\patchBothAmsMathEnvironmentsForLineno{gather}%
+%\patchBothAmsMathEnvironmentsForLineno{multline}%
+%}
