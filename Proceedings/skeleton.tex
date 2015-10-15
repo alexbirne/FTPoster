@@ -45,8 +45,8 @@ the probability of the tagging assignment to be wrong
 \begin{equation}
 \omega=\frac{N_\text{wrong}}{N_\text{right}+N_\text{wrong}}
 \end{equation}
-and the effective tagging efficiency $\varepsilon_\text{eff}=\varepsilon_\text{tag}\left(1-2\omega\right)^2$, which indicates the statistical degradation of the information and can thus be used to compare the performance of the taggers among themselves in different decay modes. The quantities $N_\text{wrong}$, $N_\text{right}$ and $N_\text{all}$ are the numbers of right tagged, wrong tagged and all candidates respectively \cite{1}. \\
-In this article in section \ref{sec:2} the algorithms used at LHCb are described more in detail. The calibration of the Flavour Tagging is then explained in section \ref{sec:3}, in section \ref{sec:4} recent developments and their performance in physics analyses at LHCb from the LHC Run I are presented. Last a short conclusion will be given in section \ref{sec:conclusion}.
+and the effective tagging efficiency $\varepsilon_\text{eff}=\varepsilon_\text{tag}\left(1-2\omega\right)^2$, which indicates the statistical degradation of the information and can thus be used to compare the performance of the taggers among themselves in different decay modes. The quantities $N_\text{wrong}$, $N_\text{right}$ and $N_\text{all}$ are the numbers of right tagged, wrong tagged and all candidates respectively, i.e. tagged and untagged candidates \cite{1}. \\
+This articles sructure is as follows. In section \ref{sec:2} the algorithms used at LHCb are described more in detail. The calibration of the Flavour Tagging is then explained in section \ref{sec:3}, in section \ref{sec:4} recent developments and their performance in physics analyses at LHCb from the LHC Run I are presented. A short conclusion will be given in section \ref{sec:conclusion}.
 
 \section{Flavour Tagging algorithms at LHCb}\label{sec:2}
 
@@ -62,8 +62,8 @@ Each tagger provides a decision $d$ on the initial flavour (\enquote{tag}) and a
 
 \subsection{Opposite side tagging}\label{sec:OStagging}
 
-The tagging information on the opposite side is obtained with mainly two different types of algorithms. The two lepton taggers, the OS electron and the OS muon tagger, the OS kaon and the OS charm use the charge of the decay products of different decay chains of the opposite $b$ quark. All these taggers use the charge of a single particle to provide a tag decision for the initial $b$ flavour.\\
-In contrast to this method the OS vertex charge tagger does not use single tracks but a weighted charge of the whole secondary vertex to come to a tag decision. In order to do so, the secondary vertex is reconstructed first out of two tracks which have the highest probablity to originate from the $b$ hadron. After this, more tracks are added to the vertex and the weighted charge is calculated as
+The tagging information on the opposite side is obtained with mainly two different types of algorithms. The OS electron, the OS muon, the OS kaon and the OS charm tagger investigate the properties of the decay products of different decay chains of the opposite $b$ quark. They use the charge of a single final state particle to provide a tag decision for the initial $b$ flavour.\\
+In contrast to this method the OS vertex charge tagger does not use single tracks but a weighted charge of the whole secondary vertex to take a tag decision. In order to do so, the secondary vertex is reconstructed first out of two tracks which have the highest probablity to originate from the $b$ hadron. After this, more tracks are added to the vertex and the weighted charge is calculated as
 \begin{equation}
 Q_\text{vtx}=\frac{\sum_i p_T^k(i)Q_i}{\sum_i p_T^k(i)}
 \end{equation}  
@@ -97,7 +97,7 @@ In both cases the calculation of $\omega$ is done in bins of the mistag estimate
 
 For most of the analyses performed during Run I the uncertainties which came from the Flavour Tagging calibration were much smaller than the statistical uncertainties. Therefore one calibration per tagger valid for all channels was provided. The systematic uncertainties were calculated due to direct uncertainties on the calibration and the results from different control channels, which were used for the calibration. The direct uncertainties on the calibration are e.g. influences of the fit model of the mass to separete signal and background candidates.\\
 For analyses where the uncertainties were dominated by the Flavour Tagging uncertainties an \enquote{ad-hoc} calibration using the best-suited control channel for the analyses was performed. \\
-In the following some recent developments in the Flavour Tagging are presented
+In the following some recent developments in the Flavour Tagging are presented.
 
 \subsection{SS kaon tagging using neural nets (NN)}
 
@@ -154,7 +154,7 @@ The measurement of $C\!P$ violation in $B^0\to J\!/\!\psi K_s^0$ was performed b
 
 \subsection{OS charm tagger}
 
-As mentioned in section \ref{sec:OStagging} the OS charm tagger uses $D$ mesons from the decay chain $b\to c$ from the opposite side $b$ quark to tag the initial flavour. The reconstructed $D$ modes related to the OS $b$ decay are listed in table \ref{tab:OScharm}.
+As mentioned in section \ref{sec:OStagging} the OS charm tagger uses charm hadrons from the decay chain $b\to c$ from the opposite side $b$ quark to tag the initial flavour. The reconstructed $D$ modes related to the OS $b$ decay are listed in table \ref{tab:OScharm}.
 \begin{table}[htbp]
   \centering
   \begin{tabular}{lrr}
@@ -173,7 +173,7 @@ As mentioned in section \ref{sec:OStagging} the OS charm tagger uses $D$ mesons 
   \small{\caption{$D$ meson decay modes with their relative contributions to $\varepsilon_\text{tag}$ and $\varepsilon_\text{eff}$ which are used by the OS charm tagger.}}
   \label{tab:OScharm}
 \end{table}
-For each mode one boosted decision tree is used to select the $D$ candidate \cite{12}. The OS charm tagger provides a relatively clean measure of the $B$ flavour, i.e. it provides a low mistag probability $\eta$. Depending on the decay mode its stand-alone effective tagging efficiency is $\varepsilon_\text{eff}=\SI{0.30}{\%}$ to \SI{0.40}{\%}.
+For each mode one boosted decision tree is used to calculate the mistag probybility $\eta$ and then the candidate with the best prediction is picked \cite{12}. The OS charm tagger provides a relatively clean measure of the $B$ flavour, i.e. it provides low values of $\eta$. Depending on the decay mode its stand-alone effective tagging efficiency is $\varepsilon_\text{eff}=\SI{0.30}{\%}$ to \SI{0.40}{\%}.
 
 \section{Conclusion}\label{sec:conclusion}
 
