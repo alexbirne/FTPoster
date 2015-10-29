@@ -80,7 +80,7 @@ The first version of the SS kaon tagger uses a selection based on rectangular cu
 		\label{fig:nnet}
 	\end{center}
 \end{figure}
-The second NN assigns the final tag and mistag based on multiple candidates \cite{13}.\\ 
+The second NN assigns the final tag and mistag \cite{13}.\\ 
 Compared to the cut-based SS kaon the SS kaon NN gives a relative improvement of \SI{50}{\%} (\SI{41}{\%}) in $\varepsilon_\text{eff}$ for $B_s^0\to D_s^-\pi^+$ ($B_s^0\to J\!/\!\psi\phi$). This improvements can be observed also when comparing the effective tagging efficiencies in the measurements of $\phi_s$ at LHCb. The effective tagging efficiencies $\varepsilon_\text{eff}$ for the $C\!P$ analyses in \mbox{$B_s^0\to J\!/\!\psi K^+K^-$}, $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ and $\bar{B}_s^0\to D_s^+D_s^-$ are listed in table \ref{tab:phis}.
 \begin{table}[htbp]
   \centering
@@ -97,7 +97,7 @@ Decay mode & $\varepsilon_\text{eff}$ (\SI{1}{fb^{-1}}) & $\varepsilon_\text{eff
   \label{tab:phis}
 \end{table} 
 
-\subsection{OS charm tagger}
+\subsection{New development: OS charm tagger}
 
 The OS charm tagger uses charm hadrons from the decay chain $b\to c$ from the opposite side $b$ quark to tag the initial flavour. The reconstructed $D$ modes related to the OS $b$ decay are listed in table \ref{tab:OScharm}.
 \begin{table}[htbp]
@@ -118,7 +118,7 @@ The OS charm tagger uses charm hadrons from the decay chain $b\to c$ from the op
   \small{\caption{$D$ meson decay modes with their relative contributions to $\varepsilon_\text{tag}$ and $\varepsilon_\text{eff}$ which are used by the OS charm tagger.}}
   \label{tab:OScharm}
 \end{table}
-For each mode one boosted decision tree is used to calculate the mistag probybility $\eta$ and then the candidate with the best prediction is picked \cite{12}. The OS charm tagger provides a relatively clean measure of the $B$ flavour, i.e. it provides low values of $\eta$. Depending on the decay mode its stand-alone effective tagging efficiency is $\varepsilon_\text{eff}=\SI{0.30}{\%}$ to \SI{0.40}{\%}.
+For each mode one boosted decision tree is used to calculate the mistag probybility $\eta$ and then the candidate with the best prediction is picked \cite{12}. The OS charm tagger provides a relatively clean measure of the $B$ flavour, i.e. it provides low values of $\eta$. Depending on the decay mode its stand-alone effective tagging efficiency is $\varepsilon_\text{eff}=\SI{0.30}{\%}$ to \SI{0.40}{\%} \cite{12}.
 
 \section{Calibration of the Flavour Tagging}\label{sec:3}
 
@@ -126,11 +126,11 @@ The mistag estimate $\eta$ provided by the different tagging algorithms has to b
 \begin{equation}
 \omega(\eta)=p_0+p_1\left(\eta-\langle\eta\rangle\right)\label{eq:linfunc}
 \end{equation}
-with the mean mistag estimate $\langle\eta\rangle$. The parameters $p_0$ and $p_1$ of this calibration function are extracted in to different ways. Using charged decay modes as $B^+\to J\!/\!\psi K^+$ and $B^+\to D^0\pi^+$ the true mistag $\omega$ can be extracted by comparing the tag with the charge of the kaon or pion in the final state. In neutral decay modes as $B^0\to J\!/\!\psi K^{*0}$, $B^0\to D^{*-}\mu^+\nu_\mu$ or $B_s^0\to D_s^-\pi^+$ a full time-dependent analysis is needed to extract omega from the mixing asymmetry:
+with the mean mistag estimate $\langle\eta\rangle$. The parameters $p_0$ and $p_1$ of this calibration function are extracted in to different ways. Using charged decay modes as $B^+\to J\!/\!\psi K^+$ and $B^+\to D^0\pi^+$ the true mistag $\omega$ can be extracted by comparing the tag decision with the charge of the kaon or pion in the final state. In neutral decay modes as $B^0\to J\!/\!\psi K^{*0}$, $B^0\to D^{*-}\mu^+\nu_\mu$ or $B_s^0\to D_s^-\pi^+$ a full time-dependent analysis is needed to extract omega from the mixing asymmetry:
 \begin{equation}
 A_\text{mix}(t)\propto\left(1-2\omega\right)\cos\left(\Delta m_{d/s} t\right)
 \end{equation}
-In both cases the calculation of $\omega$ is done in bins of the mistag estimate $\eta$ and the linear function \ref{eq:linfunc} is fitted to the $(\omega,\eta)$ pairs. Figure \ref{fig:calibration} shows for one bin the time dependent mixing asymmetry and the linear calibration function for the calibration mode $B^0\to J\!/\!\psi K^{*0}$. 
+In both cases the calculation of $\omega$ is done in bins of the mistag estimate $\eta$ and the linear function \ref{eq:linfunc} is fitted to the $(\omega,\eta)$ pairs. Figure \ref{fig:calibration} shows the time dependent mixing asymmetry and the linear calibration function for the calibration mode $B^0\to J\!/\!\psi K^{*0}$. 
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[width=0.34\textwidth, angle=0]{figs/KstAsym.pdf}
