@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{siunitx}
 \usepackage{booktabs}
+\usepackage{setspace}
 
 %\usepackage{ifthen}
 %\newboolean{uprightparticles}
@@ -27,7 +28,7 @@
 
 \abstract{In the system of neutral $B$ mesons $C\!P$-violation and neutral meson mixing can be measured using time-dependent analyses, as performed at the LHCb experiment. For such analyses the knowledge of the flavour of the mesons at production is mandatory. This information is provided by "{}flavour tagging" techniques. A description of the flavour tagging algorithms used at the LHCb experiment during Run I for $p\!p$ collisions at $\sqrt{s}=\SIlist[list-pair-separator={,},list-units=single]{7;8}{TeV}$ is reported. The good performance of the flavour tagging techniques allow high precision measurements in the $B^0$ and $B_s^0$ sector. Some recent developments are also discussed.}
 
-\FullConference{The European Physical Society Conference on High Energy Physics\\
+\FullConference{Tshe European Physical Society Conference on High Energy Physics\\
 		22--29 July 2015\\
 		Vienna, Austria}
 
@@ -82,25 +83,25 @@ The first version of the SS kaon tagger uses a selection based on rectangular cu
 \end{figure}
 The second NN assigns the final tag and mistag \cite{13}.\\ 
 Compared to the cut-based SS kaon the SS kaon NN gives a relative improvement of \SI{50}{\%} (\SI{41}{\%}) in $\varepsilon_\text{eff}$ for $B_s^0\to D_s^-\pi^+$ ($B_s^0\to J\!/\!\psi\phi$). This improvements can be observed also when comparing the effective tagging efficiencies in the measurements of $\phi_s$ at LHCb. The effective tagging efficiencies $\varepsilon_\text{eff}$ for the $C\!P$ analyses in \mbox{$B_s^0\to J\!/\!\psi K^+K^-$}, $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ and $\bar{B}_s^0\to D_s^+D_s^-$ are listed in table \ref{tab:phis}.
-\begin{table}[htbp]
+\small \begin{table}[htbp]
   \centering
   \begin{tabular}{lcc}
   \toprule
-Decay mode & $\varepsilon_\text{eff}$ (\SI{1}{fb^{-1}}) & $\varepsilon_\text{eff}$ (\SI{3}{fb^{-1}}) \\
+	Decay mode & $\varepsilon_\text{eff}$ (\SI{1}{fb^{-1}}) & $\varepsilon_\text{eff}$ (\SI{3}{fb^{-1}}) \\
   \midrule
-  $B_s^0\to J\!/\!\psi K^+K^-$ & \SI{3.13}{\%} \cite{3} & \SI{3.73}{\%} \cite{4} \\ 
-  $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ & \SI{2.43}{\%} \cite{5} & \SI{3.89}{\%} \cite{6} \\
-  $\bar{B}_s^0\to D_s^+D_s^-$ & - & \SI{5.33}{\%} \cite{7} \\
+	$B_s^0\to J\!/\!\psi K^+K^-$ & \SI{3.13}{\%} \cite{3} & \SI{3.73}{\%} \cite{4} \\ 
+	$\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ & \SI{2.43}{\%} \cite{5} & \SI{3.89}{\%} \cite{6} \\
+	$\bar{B}_s^0\to D_s^+D_s^-$ & - & \SI{5.33}{\%} \cite{7} \\
   \bottomrule
   \end{tabular}
  \small{ \caption{Tagging efficiencies and effective tagging efficiencies for the $C\!P$ analyses measuring $\phi_s$. In the analyses on \SI{1}{fb^{-1}} the cut-based version of the SS kaon was used, the analyses on the whole Run I dataset with \SI{3}{fb^{-1}} used the neural net based version. }}
   \label{tab:phis}
 \end{table} 
-
+\normalsize
 \subsection{New development: OS charm tagger}
 
 The OS charm tagger uses charm hadrons from the decay chain $b\to c$ from the opposite side $b$ quark to tag the initial flavour. The reconstructed $D$ modes related to the OS $b$ decay are listed in table \ref{tab:OScharm}.
-\begin{table}[htbp]
+\small\begin{table}[htbp]
   \centering
   \begin{tabular}{lrr}
   \toprule
@@ -117,7 +118,7 @@ The OS charm tagger uses charm hadrons from the decay chain $b\to c$ from the op
   \end{tabular}
   \small{\caption{$D$ meson decay modes with their relative contributions to $\varepsilon_\text{tag}$ and $\varepsilon_\text{eff}$ which are used by the OS charm tagger.}}
   \label{tab:OScharm}
-\end{table}
+\end{table}\normalsize
 For each mode one boosted decision tree is used to calculate the mistag probybility $\eta$ and then the candidate with the best prediction is picked \cite{12}. The OS charm tagger provides a relatively clean measure of the $B$ flavour, i.e. it provides low values of $\eta$. Depending on the decay mode its stand-alone effective tagging efficiency is $\varepsilon_\text{eff}=\SI{0.30}{\%}$ to \SI{0.40}{\%} \cite{12}.
 
 \section{Calibration of the Flavour Tagging}\label{sec:3}
@@ -128,74 +129,47 @@ The mistag estimate $\eta$ provided by the different tagging algorithms has to b
 \end{equation}
 with the mean mistag estimate $\langle\eta\rangle$. The parameters $p_0$ and $p_1$ of this calibration function are extracted in to different ways. Using charged decay modes as $B^+\to J\!/\!\psi K^+$ and $B^+\to D^0\pi^+$ the true mistag $\omega$ can be extracted by comparing the tag decision with the charge of the kaon or pion in the final state. In neutral decay modes as $B^0\to J\!/\!\psi K^{*0}$, $B^0\to D^{*-}\mu^+\nu_\mu$ or $B_s^0\to D_s^-\pi^+$ a full time-dependent analysis is needed to extract omega from the mixing asymmetry:
 \begin{equation}
-A_\text{mix}(t)\propto\left(1-2\omega\right)\cos\left(\Delta m_{d/s} t\right)
+A_\text{mix}(t)\propto\left(1-2\omega\right)\cos\left(\Delta m_{d/s} t\right)\label{eq:mix}
 \end{equation}
-In both cases the calculation of $\omega$ is done in bins of the mistag estimate $\eta$ and the linear function \ref{eq:linfunc} is fitted to the $(\omega,\eta)$ pairs. Figure \ref{fig:calibration} shows the time dependent mixing asymmetry and the linear calibration function for the calibration mode $B^0\to J\!/\!\psi K^{*0}$. 
+In both cases the calculation of $\omega$ is done in bins of the mistag estimate $\eta$ and the linear function \ref{eq:linfunc} is fitted to the $(\omega,\eta)$ pairs. Figure \ref{fig:calibration} shows the time dependent mixing asymmetry of equation \ref{eq:mix} in the case of the $B^0\to J\!/\!\psi K^{*0}$ decay and the linear calibration function resulting from the fit of all the bins in $\eta$.\\ 
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[width=0.34\textwidth, angle=0]{figs/KstAsym.pdf}
 		\includegraphics[width=0.34\textwidth, angle=0]{figs/Bd2JpsiKst-Kst-OST-8ScalingFunction_raw.pdf}
-		\small{\caption{Mixing asymmetry (left) and calibration function (right) for the OS tagger combination in the calibration mode $B^0\to J\!/\!\psi K^{*0}$.}}
+		\small{\caption{Overall mixing asymmetry (left) and resulting calibration function (right) for the OS tagger combination in the calibration mode $B^0\to J\!/\!\psi K^{*0}$.}}
 		\label{fig:calibration}
 	\end{center}
 \end{figure}
-
-\subsection{Flavour Tagging in Run I}\label{sec:4}
-
-For most of the analyses performed during Run I the uncertainties which came from the Flavour Tagging calibration were much smaller than the statistical uncertainties. Therefore one calibration per tagger valid for all channels was provided. The systematic uncertainties were calculated due to direct uncertainties on the calibration and the results from different control channels, which were used for the calibration. The direct uncertainties on the calibration are e.g. influences of the fit model of the mass to separete signal and background candidates.\\
-For analyses where the uncertainties were dominated by the Flavour Tagging uncertainties an \enquote{ad-hoc} calibration using the best-suited control channel for the analyses was performed. \\
-In the following some recent developments in the Flavour Tagging are presented.
-
-
-
-%\subsection{$\bm{C\!P}$ violation in $\bm{B_s^0}\bm{\to} \pmb{D_s^\mp} \pmb{K^\pm}$} 
-%
-%In the decay channel $B_s^0\to D_s^\mp K^\pm$ the $C\!K\!M$ angle $\gamma$ was measured in a time-dependent $C\!P$ analysis. In figure \ref{fig:DsK} the linear calibration function to transform the estimated mistag $\eta$ into the true mistag probabilty $\omega$ is shown. As already can be seen in Table \ref{tab:phis} the effective tagging efficiency is higher for decay s modes which does not contain a $J\!/\!\psi$. In $B_s^0\to D_s^\mp K^\pm$ the effective tagging efficiency for the analysis on \SI{1}{fb^{-1}} was \SI{5.07}{\%}. To this efficiency the SS kaon nnet adds more than \SI{1.3}{\%}. Finally in figure \ref{fig:DsK} the measured $C\!P$ asymmetry for one finalstate can be seen nicely.
-%\begin{figure}[htbp]
-%	\begin{center}
-%		\includegraphics[width=0.8\textwidth, angle=0]{figs/CPV_DsK2.pdf}
-%		\caption{Linear calibration function (left) and $C\!P$ asymmetry (right) for the measurement of the $C\!K\!M$ angle $\gamma$ in $B_s^0\to D_s^\mp K^\pm$.}
-%		\label{fig:DsK}
-%	\end{center}
-%\end{figure}
+In analyses systematic uncertainties coming from the Flavour Tagging are assigned for the uncertainties associated with the calibration method and for the validity of the calibration in the signal decay mode. Adding these two categories of systematic uncertainties, the size of the systematic uncertainty is of the order of the size of the statistical uncertainty on the calibration.
+For most analyses  during Run I the systematic uncertainties are much smaller than the statistical uncertainties. Therefore one calibration per tagger valid for all channels is provided.\\
+For analyses where the systematic uncertainties are dominated by the Flavour Tagging uncertainties and the systematic uncertainties are of the order of the statistical uncertainties an \enquote{ad-hoc} calibration using the best-suited control channel for the analyses is performed.
 
 \subsection{$\bm{C\!P}$ violation in $\bm{B^0}\bm{\to} \bm{J\!/\!\psi K_s^0}$ $\pmb{(\sin 2\beta)}$}
 
-The measurement of $C\!P$ violation in $B^0\to J\!/\!\psi K_s^0$ was performed both on \SI{1}{fb^{-1}} and on the whole Run I dataset of \SI{3}{fb^{-1}}. The effective tagging power increased from $\varepsilon=\SI{2.38}{\%}$ (\SI{1}{fb^{-1}}) \cite{9} to $\varepsilon=\SI{3.02}{\%}$ (\SI{3}{fb^{-1}}) \cite{10}. This increase was due to the usage of the SS pion tagger which adds more than \SI{0.376}{\%} in the newest analysis. As the measurement of $\sin 2\beta$ is a precision analysis an \enquote{ad-hoc} calibration was performed. The OS taggers were calibrated with the control channel $B^+\to J\!/\!\psi K^+$, the SS pion tagger was calibrated with $B^0\to J\!/\!\psi K^{*0}$ . For both modes systematic uncertainties were evaluated on the calibration method itself and due to the portability to the \mbox{$B^0\to J\!/\!\psi K_s^0$} decay. 
-
-%\subsection{$\bm{C\!P}$ violation in $\bm{B_s^0}\bm{\to} \bm{J\!/\!\psi K_s^0}$ $\pmb{(\sin 2\beta)}$}
-%
-%As shown in figure \ref{fig:BsJpsi} the $B_d^0$ couldn't be excluded in the selection of $B_s^0\to J\!/\!\psi K_s^0$. Therefore the effective tagging efficiency for both modes was determined. In 
-%\begin{figure}[htbp]
-%	\begin{center}
-%		\includegraphics[width=0.8\textwidth, angle=0]{figs/CPV_BsJpsiKS.pdf}
-%		\caption{Mass fit for $B_s^0\to J\!/\!\psi K_s^0$ for Longtrack (left) and Downstream (right) events.}
-%		\label{fig:BsJpsi}
-%	\end{center}
-%\end{figure}
-
-
+The measurement of $C\!P$ violation in $B^0\to J\!/\!\psi K_s^0$ was performed both on \SI{1}{fb^{-1}} and on the whole Run I dataset of \SI{3}{fb^{-1}}. The effective tagging power increased from $\varepsilon=\SI{2.38}{\%}$ (\SI{1}{fb^{-1}}) \cite{9} to $\varepsilon=\SI{3.02}{\%}$ (\SI{3}{fb^{-1}}) \cite{10}. This increase was due to the use of the SS pion tagger which adds more than \SI{0.376}{\%} in the newest analysis. As in the measurement of $\sin 2\beta$ the statistical uncertainties are of the order of the systematic uncertainties and the flavour tagging contribution was expected to be a dominant factor an \enquote{ad-hoc} calibration was performed. The OS taggers were calibrated with the control channel $B^+\to J\!/\!\psi K^+$, the SS pion tagger was calibrated with $B^0\to J\!/\!\psi K^{*0}$. For both decay modes the decay and kinematic properties of the tagging particles should be similar to the signal decay, especially as both are reconstructed in the $J\!/\!\psi X$ mode. Systematic uncertainties were evaluated on the calibration method itself and due to the portability to the \mbox{$B^0\to J\!/\!\psi K_s^0$} decay. This approach decreased the size of the systematic uncertainty coming from the flavour tagging calibration to \SI{33}{\%} of the total systematic uncertainty \cite{10}.
 
 \section{Conclusion}\label{sec:conclusion}
 
-During Run I the performance of the Flavour Tagging improved for the SS kaon tagging and for the OS tagging in the order of \SI{40}{\%} and \SI{15}{\%} respectively. Many time-dependent measurements could be performed successfully with high precision and new developments as the OS kaon NN tagging were established. 
+During Run I the performance of the Flavour Tagging improved for the SS kaon tagging and for the OS tagging in the order of \SI{40}{\%} and \SI{15}{\%} respectively. Many time-dependent measurements could be performed successfully with high precision.
 
+\begingroup
+\setstretch{0.8}
 \begin{thebibliography}{99}
-\bibitem{1}LHCb Collaboration, R.Aaij et. al., {\it Opposite-side flavour tagging of $B$ mesons at the LHCb experiment, Eur.Phys.J.} C72 (2012) 2022
-\bibitem{2}LHCb Collaboration, R. Aaij et. al., {\it Optimization and calibration of the same-side kaon \mbox{tagging} algorithm using hadronic $B_s^0$ decays in 2011 data,} LHCb-CONF-2012-033
-\bibitem{13} G. A. Krocker, {\it Development and calibration of a same side kaon tagging algorithm and measurement of the $B_s^0-\bar{B_s^0}$ oscillation frequency $\Delta m_s$ at the LHCb experiment, } PhD thesis, Heidelberg U., Sep, 2013, CERN-THESIS-2013-213
-\bibitem{3}LHCb Collaboration, R. Aaij et. al., {\it Measurement of $C\!P$ violation and the $B_s^0$ meson decay width difference with   $B_s^0\to J\!/\!\psi K^+K^-$ and \mbox{$\bar{B_s^0}\to J\!/\!\psi \pi^+\pi^-$} decays, } Phys.Rev. D87 (2013) 11, 112010
-\bibitem{4}LHCb Collaboration, R. Aaij et. al., {\it Precision measurement of $C\!P$ violation in $B_s^0\to J\!/\!\psi K^+K^-$ decays, } Phys.Rev.Lett. 114 (2015) 4, 041801
-\bibitem{5} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the $C\!P$-violating phase $\phi_s$ in $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ decays, } Phys.Lett. B713 (2012) 378-386
-\bibitem{6} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the $C\!P$-violating phase $\phi_s$ in $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ decays, } Phys.Lett. B736 (2014) 186-195
-\bibitem{7} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the $C\!P$-violating phase $\phi_s$ in $\bar{B}_s^0\to D_s^+D_s^-$ decays, } Phys.Rev.Lett. 113 (2014) 21, 211801
-%\bibitem{8} LHCb Collaboration, R. Aaij et. al., {\it Measurement of $C\!P$ asymmetry in \mbox{$B_s^0\to D_s^\mp K^\pm$} decays, } JHEP 1411 (2014) 060
+\small\bibitem{1}LHCb Collaboration, R.Aaij et. al., {\it Opposite-side flavour tagging of $B$ mesons at the LHCb experiment, Eur.Phys.J.} C72 (2012) 2022
+\small\bibitem{2}LHCb Collaboration, R. Aaij et. al., {\it Optimization and calibration of the same-side kaon \mbox{tagging} algorithm using hadronic $B_s^0$ decays in 2011 data,} LHCb-CONF-2012-033
+\small\bibitem{13} G. A. Krocker, {\it Development and calibration of a same side kaon tagging algorithm and measurement of the $B_s^0-\bar{B_s^0}$ oscillation frequency $\Delta m_s$ at the LHCb experiment, } PhD thesis, Heidelberg U., Sep, 2013, CERN-THESIS-2013-213
+\small\bibitem{3}LHCb Collaboration, R. Aaij et. al., {\it Measurement of $C\!P$ violation and the $B_s^0$ meson decay width difference with   $B_s^0\to J\!/\!\psi K^+K^-$ and \mbox{$\bar{B_s^0}\to J\!/\!\psi \pi^+\pi^-$} decays, } Phys.Rev. D87 (2013) 11, 112010
+\small\bibitem{4}LHCb Collaboration, R. Aaij et. al., {\it Precision measurement of $C\!P$ violation in $B_s^0\to J\!/\!\psi K^+K^-$ decays, } Phys.Rev.Lett. 114 (2015) 4, 041801
+\small\bibitem{5} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the $C\!P$-violating phase $\phi_s$ in $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ decays, } Phys.Lett. B713 (2012) 378-386
+\small\bibitem{6} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the $C\!P$-violating phase $\phi_s$ in $\bar{B}_s^0\to J\!/\!\psi \pi^+\pi^-$ decays, } Phys.Lett. B736 (2014) 186-195
+\small\bibitem{7} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the $C\!P$-violating phase $\phi_s$ in $\bar{B}_s^0\to D_s^+D_s^-$ decays, } Phys.Rev.Lett. 113 (2014) 21, 211801
+\small\bibitem{12} LHCb Collaboration, R. Aaij et. al., {\it $B$ flavor tagging using reconstructed charm decays at the LHCb experiment, } LHCb-PAPER-2015.027
 \bibitem{9} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the time-dependent $C\!P$ asymmetry in $B^0\to J\!/\!\psi K_s^0$ decays, } Phys.Lett. B721 (2013) 24-31
-\bibitem{10} LHCb Collaboration, R. Aaij et. al., {\it Measurement of $C\!P$ violation in \mbox{$B^0\to J\!/\!\psi K_s^0$} decays, } Phys.Rev.Lett. 115 (2015) 3, 031601
-%\bibitem{11} LHCb Collaboration, R. Aaij et. al., {\it Measurement of the time-dependent $C\!P$ asymmetries in $B_s^0\to J\!/\!\psi K_s^0$, } JHEP 1506 (2015) 131
-\bibitem{12} LHCb Collaboration, R. Aaij et. al., {\it $B$ flavor tagging using reconstructed charm decays at the LHCb experiment, } LHCb-PAPER-2015.027
+\small\bibitem{10} LHCb Collaboration, R. Aaij et. al., {\it Measurement of $C\!P$ violation in \mbox{$B^0\to J\!/\!\psi K_s^0$} decays, } Phys.Rev.Lett. 115 (2015) 3, 031601
 
-\end{thebibliography} 
+
+\end{thebibliography}
+\endgroup 
 
 
 \end{document}
