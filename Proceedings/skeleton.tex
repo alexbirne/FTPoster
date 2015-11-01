@@ -39,7 +39,7 @@
 
 \section{Introduction}\label{sec:1}
 
-The aim of the Flavour Tagging algorithms is to determine the flavour of neutral $B$ mesons at their production. These algorithms are called taggers and can be classified in two groups. The same side (SS) taggers use charged particles which are created in the fragmentation process of the signal $b$ quark. The opposite side (OS) taggers infer the flavour of the non-signal $b$ quark of the $b\bar{b}$ pair produced in the $p\!p$ collision by looking e.g. for leptons originating from semileptonic $b\to cW$ transitions or kaons coming from $b\to c\to s$ transitions (Figure \ref{fig:flavtagscheme}) \cite{1}.\\
+The aim of the Flavour Tagging algorithms is to determine the flavour of neutral $B$ mesons at their production. These algorithms are called taggers and can be classified into two groups. The same side (SS) taggers use charged particles which are created in the fragmentation process of the signal $b$ quark. The opposite side (OS) taggers infer the flavour of the non-signal $b$ quark of the $b\bar{b}$ pair produced in the $p\!p$ collision by looking e.g. for leptons originating from semileptonic $b\to cW$ transitions or kaons coming from $b\to c\to s$ transitions (Figure \ref{fig:flavtagscheme}) \cite{1}.\\
 The performance of the Flavour Tagging algorithms is characterised by the tagging efficiency
 \begin{equation}
 \varepsilon_\text{tag}=\frac{N_\text{right}+N_\text{wrong}}{N_\text{all}},
@@ -48,8 +48,8 @@ the probability of the tagging decision to be wrong
 \begin{equation}
 \omega=\frac{N_\text{wrong}}{N_\text{right}+N_\text{wrong}}
 \end{equation}
-and the dilution $D=1-2\omega$. The quantities $N_\text{right}$, $N_\text{wrong}$ and $N_\text{all}$ are the numbers of the right tagged, wrong tagged, and all candidates respectively, i.e. tagged and untagged candidates.\\ 
-Each tagger provides a per-event tag decision $d$ and a probability $\eta$ of the decision to be wrong. This predicted mistag probability $\eta$ is calibrated on data with a function $\omega(\eta)$. Weighting each signal candidate with $D=1-2\omega(\eta)$ leads to an corrected per-event dilution factor. The statistical power of a $C\!P$ or mixing asymmetry measurement using tagging algorithms is proportional to the effective tagging efficiency
+and the dilution $D=1-2\omega$. The quantities $N_\text{right}$, $N_\text{wrong}$ and $N_\text{all}$ are the numbers of the right tagged, wrong tagged, and all candidates respectively, where the latter includes both the tagged and untagged candidates.\\ 
+Each tagger provides a per-event tag decision $d$ and a probability $\eta$ of the decision to be wrong. This predicted mistag probability $\eta$ is calibrated with a function $\omega(\eta)$ with parameters obtained from data. Weighting each signal candidate with $D=1-2\omega(\eta)$ leads to an corrected per-event dilution factor. The statistical power of a $C\!P$ or mixing asymmetry measurement using tagging algorithms is proportional to the effective tagging efficiency
 \begin{equation}
 \varepsilon_\text{eff}= \varepsilon_\text{tag}\frac{1}{N_\text{tag}}\sum_{i=1}^{N_\text{tag}}\left(1-2\omega_i(\eta)\right)^2.
 \end{equation}
@@ -65,7 +65,7 @@ Thus any improvement to this effective tagging efficiency increases the statisti
 \section{Flavour Tagging algorithms at LHCb}\label{sec:2}
 
 For the opposite side tagging algorithms there are mainly two different types of algorithms. Single particle taggers identify electrons, muons and kaons coming from the other $b$ hadron. To select these particles a large impact parameter significance  with respect to the primary vertex and a large transverse momentum $p_\text{T}$ are required. For particle identification requirements on the difference between the logarithm of the likelihood for the muon, electron, kaon or proton and the pion hypothesis are applied. In case of multiple candidates from one tagging algorithm the candidate with the highest transverse momentum is chosen.\\
-In contrast to this method the OS vertex charge tagger does not use single tracks but a weighted charge of a secondary vertex to take a tag decision. The secondary vertex is reconstructed from two tracks which have the highest probablity to originate from the OS $b$ hadron. From this seed more tracks that are compatible with coming from the secondary vertex but not from the primary vertex are added to the vertex to form the final $b$hadron candidate. Finally a weighted charge is calculated as a sum of the charges $Q_i$ of all tracks associated to the vertex
+In contrast to this method the OS vertex charge tagger does not use single tracks but a weighted charge of a secondary vertex to arrive at a tag decision. The secondary vertex is reconstructed from two tracks which have the highest probablity to originate from the OS $b$ hadron. From this seed more tracks that are compatible with coming from the secondary vertex but not from the primary vertex are added to the vertex to form the final $b$ hadron candidate. Finally a weighted charge is calculated as a sum of the charges $Q_i$ of all tracks associated to the vertex
 \begin{equation}
 Q_\text{vtx}=\frac{\sum_i p_T^k(i)Q_i}{\sum_i p_T^k(i)},
 \end{equation} 
@@ -77,7 +77,7 @@ For the same side tagging one has to distinguish between $B_d^0$ and $B_s^0$ mes
 The first version of the SS kaon tagger developed at the LHCb experiment uses a selection based on a sequential set of requirements on some discriminating variables to identify the tagging kaon and a neural net (NN) to estimate the mistag probabilty $\eta$. An updated version of this tagger, the SS kaon neural net tagger, uses two NN. The first NN distinguishes between fragmentation tracks and the underlying event tracks (see figure \ref{fig:nnet}). The fragmentation tracks are the signal tracks for the SS kaon tagger, i.e. the tracks are the searched tagging particle tracks \cite{2}. 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[width=0.58\textwidth, angle=0]{figs/sskaonNnetfirstNN3.pdf}
+		\includegraphics[width=0.57\textwidth, angle=0]{figs/sskaonNnetfirstNN3.pdf}
 		\small{\caption{Distribution of NN response for fragmentation tracks (signal) and underlying event tracks (background) \cite{2}}}
 		\label{fig:nnet}
 	\end{center}
@@ -124,15 +124,15 @@ For each mode one boosted decision tree is used to calculate the mistag probybil
 
 \section{Calibration of the Flavour Tagging}\label{sec:3}
 
-The mistag estimate $\eta$ provided by the different tagging algorithms has to be corrected and transformed into the true mistag probabilty $\omega$. This is done with a linear calibration function
+The mistag estimate $\eta$ provided by the different tagging algorithms has to be corrected and transformed into the true mistag probabilty $\omega$. This is achieved by using a linear calibration function
 \begin{equation}
 \omega(\eta)=p_0+p_1\left(\eta-\langle\eta\rangle\right)\label{eq:linfunc}
 \end{equation}
-where $\langle\eta\rangle$ is the mean mistag estimate. The parameters $p_0$ and $p_1$ of this calibration function are extracted in to different ways. Using charged decay modes as $B^+\to J\!/\!\psi K^+$ and $B^+\to D^0\pi^+$ the true mistag $\omega$ can be extracted by comparing the tag decision with the charge of the kaon or pion in the final state. In neutral decay modes as $B^0\to J\!/\!\psi K^{*0}$, $B^0\to D^{*-}\mu^+\nu_\mu$ or $B_s^0\to D_s^-\pi^+$ a full time-dependent analysis is needed to extract omega from the mixing asymmetry:
+where $\langle\eta\rangle$ is the mean mistag estimate. The parameters $p_0$ and $p_1$ of this calibration function are extracted in two different ways. Using charged decay modes as $B^+\to J\!/\!\psi K^+$ and $B^+\to D^0\pi^+$ the true mistag $\omega$ can be extracted by comparing the tag decision with the charge of the kaon or pion in the final state. In neutral decay modes as $B^0\to J\!/\!\psi K^{*0}$, $B^0\to D^{*-}\mu^+\nu_\mu$ or $B_s^0\to D_s^-\pi^+$ a full time-dependent analysis is needed to extract omega from the mixing asymmetry:
 \begin{equation}
 A_\text{mix}(t)\propto\left(1-2\omega\right)\cos\left(\Delta m_{d/s} t\right)\label{eq:mix}
 \end{equation}
-In both cases the calculation of $\omega$ is done in bins of the mistag estimate $\eta$ and the linear function \ref{eq:linfunc} is fitted to the $(\omega,\eta)$ pairs. Figure \ref{fig:calibration} shows the time dependent mixing asymmetry of equation \ref{eq:mix} in the case of the $B^0\to J\!/\!\psi K^{*0}$ decay and the linear calibration function resulting from the fit of all the bins in $\eta$.\\ 
+In both cases the calculation of $\omega$ is done in bins of the mistag estimate $\eta$ and the linear function in Eq. \ref{eq:linfunc} is fitted to the $(\omega,\eta)$ pairs. Figure \ref{fig:calibration} shows the time dependent mixing asymmetry of Eq. \ref{eq:mix} in the case of the $B^0\to J\!/\!\psi K^{*0}$ decay and the linear calibration function resulting from the simultaneous fit in all bins of $\eta$.\\ 
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[width=0.34\textwidth, angle=0]{figs/KstAsym.pdf}
@@ -147,8 +147,8 @@ For analyses with systematic uncertainties of the order of the statistical uncer
 
 \subsection{$\bm{C\!P}$ violation in $\bm{B^0}\bm{\to} \bm{J\!/\!\psi K_s^0}$ $\pmb{(\sin 2\beta)}$}
 
-The measurement of $C\!P$ violation in $B^0\to J\!/\!\psi K_s^0$ was performed on \SI{1}{fb^{-1}} and updated using the whole Run I dataset of \SI{3}{fb^{-1}}. The effective tagging power increased from $\varepsilon=\SI{2.38}{\%}$ (\SI{1}{fb^{-1}}) \cite{9} to $\varepsilon=\SI{3.02}{\%}$ (\SI{3}{fb^{-1}}) \cite{10}. This increase was mainly due to the use of the SS pion tagger which adds more than \SI{0.376}{\%} in the newest analysis. As in the measurement of $\sin 2\beta$ the statistical uncertainties are of the order of the systematic uncertainties and the flavour tagging contribution was expected to be a dominant factor an \enquote{ad-hoc} calibration was performed. The OS taggers were calibrated with the control channel $B^+\to J\!/\!\psi K^+$, the SS pion tagger was calibrated with $B^0\to J\!/\!\psi K^{*0}$. 
-For both decay modes the kinematic variables influencing the calibration needed to be reweighted to the signal decay. Thus using these similar decays with high event yields as control channels allowed to control the size of the systematic uncertainties due to the portability. This approach decreased the size of the systematic uncertainty coming from the flavour tagging calibration to \SI{33}{\%} of the total systematic uncertainty \cite{10}.
+The measurement of $C\!P$ violation in $B^0\to J\!/\!\psi K_s^0$ is performed on \SI{1}{fb^{-1}} and updated using the full Run I dataset of \SI{3}{fb^{-1}}. The effective tagging power increases from $\varepsilon=\SI{2.38}{\%}$ (\SI{1}{fb^{-1}}) \cite{9} to $\varepsilon=\SI{3.02}{\%}$ (\SI{3}{fb^{-1}}) \cite{10}. This increase is mainly due to the use of the SS pion tagger which adds more than \SI{0.376}{\%} in the newest analysis. In this measurement, the statistical uncertainties are at the level of systematic uncertainties originating from the standard flavour tagging calibration. Thus, an \enquote{ad-hoc} calibration is performed: The OS taggers are calibrated with the control channel $B^+\to J\!/\!\psi K^+$, the SS pion tagger is calibrated with $B^0\to J\!/\!\psi K^{*0}$. 
+The two decay modes are ideal calibration channels for this measurement: The high event yields allow for a precise determination of the calibration function parameters, while the kinematic similarity to the signal mode ensures the portability of the calibration from the control to the signal mode. The latter is checked by reweighting the control modes in the kinematic variables that influence the tagging response according to the signal decay and repeating the calibration procedure. Only small changes in the calibration result are found, thus leading to a decrease of the systematic uncertainties originating from the flavour tagging \SI{33}{\%} of the total systematic uncertainty \cite{10}.
 
 \begingroup
 \setstretch{0.8}
